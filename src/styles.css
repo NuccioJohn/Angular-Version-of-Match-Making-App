@@ -1,1 +1,314 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {background: #ffffff url('./assets/geometry2.png'); /* Background pattern from Subtle Patterns */
+    
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+/* .deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+} */
+
+/* .deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+} */
+
+/*Created a Hover Effect */
+.deck .card:hover {
+    background: #02b3e4;
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+    pointer-events: none;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+    animation: none;
+    pointer-events: none;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px){
+    .deck {
+        width: 400px;
+        min-height: 400px;
+        background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+        padding: 32px;
+        border-radius: 10px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 3em;
+    }
+
+    .deck .card {
+        height: 75px;
+        width: 75px;
+        background: #2e3d49;
+        font-size: 0;
+        color: #ffffff;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 665px){
+    .deck {
+        width: 500px;
+        min-height: 525px;
+        background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+        padding: 32px;
+        border-radius: 10px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 3em;
+    }
+
+    .deck .card {
+        height: 100px;
+        width: 100px;
+        background: #2e3d49;
+        font-size: 0;
+        color: #ffffff;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    }
+}
+
+@media screen and (min-width: 667px){
+    .deck {
+        width: 660px;
+        min-height: 680px;
+        background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+        padding: 32px;
+        border-radius: 10px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 3em;
+    }
+
+    .deck .card {
+        height: 125px;
+        width: 125px;
+        background: #2e3d49;
+        font-size: 0;
+        color: #ffffff;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    }
+}
+
+/*CLock Stuff*/
+
+.clockbox,
+#clock {
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+/* Clock styles */
+.circle {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+
+.circle-red{
+    fill: #FF0000;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+
+.mid-circle {
+    fill: #000;
+}
+.hour-marks {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+
+.hour-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 17;
+    stroke-miterlimit: 10;
+}
+
+.minute-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 11;
+    stroke-miterlimit: 10;
+}
+
+.second-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 4;
+    stroke-miterlimit: 10;
+}
+
+/* Transparent box ensuring arms center properly. */
+.sizing-box {
+    fill: none;
+}
+
+/* Make all arms rotate around the same center point. */
+/* Optional: Use transition for animation. */
+#hour,
+#minute,
+#second {
+    transform-origin: 300px 300px;
+    transition: transform .5s ease-in-out;
+}
+
+/*animation for clock */
+.clock-explosion {
+animation: shakeClock 1s;
+animation-iteration-count: infinite;
+}
+
+@keyframes shakeClock {
+0% { transform: translate(2px, 2px) rotate(1deg); }
+10% { transform: translate(-2px, -3px) rotate(-2deg); }
+20% { transform: translate(-4px, -1px) rotate(1deg); }
+30% { transform: translate(4px, 2px) rotate(1deg); }
+40% { transform: translate(2px, -2px) rotate(2deg); }
+50% { transform: translate(-2px, 3px) rotate(-2deg); }
+60% { transform: translate(-4px, 0px) rotate(1deg); }
+70% { transform: translate(4px, -2px) rotate(-2deg); }
+80% { transform: translate(-2px, -2px) rotate(2deg); }
+90% { transform: translate(2px, 3px) rotate(1deg); }
+100% { transform: translate(2px, -3px) rotate(-2deg); }
+}
